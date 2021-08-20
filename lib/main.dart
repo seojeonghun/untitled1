@@ -5,6 +5,7 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -84,11 +85,31 @@ class MainView extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          child: Text(
-                            '거북목증후군',
+                          margin: EdgeInsets.only(left: 70, top:454),
+                          child: Text("안구건조증",
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 20,
+                              color: Colors.black,
+                            )
+                          ),
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(left: 57, top:655),
+                          child: Text("손목터널증후군",
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20,
+                                color: Colors.black,
+                              )
+                          ),
+                        ),
+                        Container(
+                          child: Text(
+                            '           아이를 위한 AI',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 41,
                               color: Colors.black,
                             ),
 
@@ -99,20 +120,22 @@ class MainView extends StatelessWidget {
                         ),
 
                         Positioned(
-                          left: 100,
-                          top: 10,
+                          left: 60,
+                          top: 250,
                           child: Container(
                             child: Text(
-                                '아이를 위한 AI',
+                                '거북목증후군',
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
-                                  fontSize: 41,
+                                  fontSize: 20,
                                   color: Colors.black,
                                 ),
 
 
 
                           ),
+
+
 
                         ),
 
@@ -123,7 +146,10 @@ class MainView extends StatelessWidget {
 
 
 
+
+
                         )],
+
 
                 ),
 
@@ -131,12 +157,14 @@ class MainView extends StatelessWidget {
 
                 //
                 )],
+
             ),
           ),
         ],
       ),
     );
   }
+
 }
 
 
