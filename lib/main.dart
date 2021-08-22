@@ -5,172 +5,117 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: MainView(),
-
     );
   }
 }
 
-
 class MainView extends StatelessWidget {
+  bool _turtle = false;
+  bool _eye = false;
+  bool _hand = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
-      body: Column(
-
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-
-
-
-          Expanded(
-
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-
-
-
-
-
-                Container(
-                  height: 719,
-                  width: 483,
-                  color: Colors.lightGreen,
-
-                  child: Stack(
-
-                      children: <Widget>[
-
-                        Container(
-                          margin: EdgeInsets.only(left: 30, top:120),
-                          color: Colors.green,
-
-                          child: Image(
-
-                            image: AssetImage("imgs/imgss/turtle.png"),
-                            width: 180,
-
-
-                          ),
-
-
-                        ),
-
-
-
-
-
-                        Container(
-                            margin: EdgeInsets.only(left: 30, top:280),
-                          color: Colors.green,
-                            child: Image(
-                              image: AssetImage("imgs/imgss/eye.png"),
-                                width: 180
-                            ),
-                          ),
-
-                        Container(
-                          margin: EdgeInsets.only(left: 30, top:480),
-                          color: Colors.green,
-
-                          child: Image(
-                            image: AssetImage("imgs/imgss/hand.png"),
-                              width: 180
-                          ),
-                        ),
-                        Container(
-                          margin: EdgeInsets.only(left: 70, top:454),
-                          child: Text("안구건조증",
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20,
-                              color: Colors.black,
-                            )
-                          ),
-                        ),
-                        Container(
-                          margin: EdgeInsets.only(left: 57, top:655),
-                          child: Text("손목터널증후군",
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 20,
-                                color: Colors.black,
-                              )
-                          ),
-                        ),
-                        Container(
-                          child: Text(
-                            '           아이를 위한 AI',
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 41,
-                              color: Colors.black,
-                            ),
-
-
-
-                          ),
-
-                        ),
-
-                        Positioned(
-                          left: 60,
-                          top: 250,
-                          child: Container(
-                            child: Text(
-                                '거북목증후군',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 20,
-                                  color: Colors.black,
-                                ),
-
-
-
-                          ),
-
-
-
-                        ),
-
-
-
-
-
-
-
-
-
-
-                        )],
-
-
+      appBar: AppBar(
+        title: Text('Bunny&Turtle'),
+        backgroundColor: Colors.green,
+      ),
+      body: Container(
+        width: double.infinity,
+        color: Colors.lightGreen,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(left: 8.0),
+              child: Text(
+                "거북목 증후군",
+                textAlign: TextAlign.left,
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                  color: Colors.black,
                 ),
-
-
-
-                //
-                )],
-
+              ),
             ),
-          ),
-        ],
+
+            SizedBox(
+              width: double.infinity,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text(
+                    "아이를 위한 AI",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 41,
+                      color: Colors.black,
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: ElevatedButton(
+                      onPressed: () {
+                        _turtle = !(_turtle);
+                      },
+                      style: ButtonStyle(
+                          backgroundColor: MaterialStateProperty.resolveWith(
+                              (states) =>
+                                  _turtle ? Colors.greenAccent : Colors.transparent)),
+                      child: Image(
+                        width: MediaQuery.of(context).size.width * 0.4,
+                        height: MediaQuery.of(context).size.height * 0.2,
+                        image: AssetImage("imgs/imgss/turtle.png"),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: ElevatedButton(
+                      onPressed: () {
+                        _eye = !(_eye);
+                      },
+                      style: ButtonStyle(
+                          backgroundColor: MaterialStateProperty.resolveWith(
+                              (states) =>
+                                  _eye ? Colors.greenAccent : Colors.transparent)),
+                      child: Image(
+                        width: MediaQuery.of(context).size.width * 0.4,
+                        height: MediaQuery.of(context).size.height * 0.2,
+                        image: AssetImage("imgs/imgss/eye.png"),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: ElevatedButton(
+                      onPressed: () {
+                        _hand = !(_hand);
+                      },
+                      style: ButtonStyle(
+                          backgroundColor: MaterialStateProperty.resolveWith(
+                              (states) =>
+                                  _hand ? Colors.greenAccent : Colors.transparent)),
+                      child: Image(
+                        width: MediaQuery.of(context).size.width * 0.4,
+                        height: MediaQuery.of(context).size.height * 0.2,
+                        image: AssetImage("imgs/imgss/hand.png"),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
-
 }
-
-
-
-
-
-
-
-
